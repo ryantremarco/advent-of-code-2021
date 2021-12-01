@@ -13,5 +13,16 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(input)
+	count := countIncreases(input)
+	fmt.Println(count)
+}
+
+func countIncreases(depths []int) (out int) {
+	for i, depth := range depths[1:] {
+		if depth > depths[i] {
+			out++
+		}
+	}
+
+	return
 }
