@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"aoc/util"
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("hello, world!")
+	input, err := util.ReadInputInts(os.Args[1])
+	if err != nil {
+		fmt.Printf("Failed to read input file: %s\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(input)
 }
